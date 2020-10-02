@@ -2,16 +2,17 @@ package me.cameron.boids;
 
 import java.awt.Color;
 import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.Polygon;
-import java.awt.Rectangle;
-import java.awt.geom.AffineTransform;
+import java.awt.Image;
 import java.util.Random;
 
+import res.Texture;
+
 public class Boid {
+
+	Image image;
 	double x;
 	double y;
-	
+
 	long life = 0;
 
 	double cx;
@@ -39,22 +40,25 @@ public class Boid {
 		movementAngle = new Random().nextInt(360);
 		cx = 0;
 		cy = 0;
+
+		image = Texture.loadTexture("boid.png");
+
 	}
 
 	public void update() {
-		
+
 //		while (movementAngle > 360) {
 //			movementAngle = movementAngle - 360;
 //		}
 //		while (movementAngle < 0) {
 //			movementAngle = movementAngle + 360;
 //		}
-		
-		life = life+1;
+
+		life = life + 1;
 
 		cx = Main.getWindow().getScreen().cx;
 		cy = Main.getWindow().getScreen().cy;
-		
+
 //		if(life < 5) {
 //			movementAngle = getAngleTo(cx, cy);
 //		}
@@ -67,8 +71,8 @@ public class Boid {
 		if (new Random().nextDouble() < 0.005) {
 
 			splitCooldown = 50;
-			
-			movementAngle = movementAngle+new Random().nextInt(50) * (new Random().nextBoolean() ? 1 : -1);
+
+			movementAngle = movementAngle + new Random().nextInt(50) * (new Random().nextBoolean() ? 1 : -1);
 
 		}
 
@@ -117,8 +121,6 @@ public class Boid {
 			}
 		}
 
-		
-
 		move();
 
 	}
@@ -130,6 +132,7 @@ public class Boid {
 //		Polygon p = new Polygon(new int[] { (int) x - size / 2, (int) x + size / 2, (int) x },
 //				new int[] { (int) y - size / 2, (int) y - size / 2, (int) y + size }, 3);
 
+		g.drawImage(ImageUtils.rotate(image, movementAngle), (int) x - size / 2, (int) y - size / 2, size, size, null);
 
 		g.fillRect(((int) x - (size / 2)), ((int) y - (size / 2)), size, size);
 		if (Main.getWindow().getScreen().debug && (Main.getWindow().getScreen().selected == null || selected == true)) {
@@ -192,7 +195,7 @@ public class Boid {
 		while (c < 0) {
 			c = c + 360;
 		}
-		
+
 //		movementAngle = c;
 
 		if (movementAngle > c - 1 && movementAngle < c + 1) {
