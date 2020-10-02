@@ -28,7 +28,7 @@ public class Boid {
 	double speed = 1;
 	boolean selected = false;
 
-	int size = 5;
+	int size = 10;
 
 	int splitCooldown = 0;
 
@@ -132,9 +132,9 @@ public class Boid {
 //		Polygon p = new Polygon(new int[] { (int) x - size / 2, (int) x + size / 2, (int) x },
 //				new int[] { (int) y - size / 2, (int) y - size / 2, (int) y + size }, 3);
 
-		g.drawImage(ImageUtils.rotate(image, movementAngle), (int) x - size / 2, (int) y - size / 2, size, size, null);
+		g.drawImage(ImageUtils.rotate(image, movementAngle+90), (int) x - size / 2, (int) y - size / 2, size, size, null);
 
-		g.fillRect(((int) x - (size / 2)), ((int) y - (size / 2)), size, size);
+//		g.fillRect(((int) x - (size / 2)), ((int) y - (size / 2)), size, size);
 		if (Main.getWindow().getScreen().debug && (Main.getWindow().getScreen().selected == null || selected == true)) {
 			if (Main.getWindow().getScreen().avoidCircle) {
 				g.setColor(Color.RED);
