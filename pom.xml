@@ -65,9 +65,9 @@
 							<dontWrapJar>false</dontWrapJar>
 							<errTitle>Error in launch4j plugin</errTitle>
 							<classPath>
-								<mainClass>path.Main</mainClass>
+								<mainClass>${main.class}</mainClass>
 							</classPath>
-							<icon>Project.ico</icon>
+							<icon>application.ico</icon>
 							<jre>
 								<minVersion>1.5.0</minVersion>
 								<maxVersion>1.6.0</maxVersion>
