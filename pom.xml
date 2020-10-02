@@ -6,7 +6,7 @@
 	<artifactId>BoidSandbox</artifactId>
 	<packaging>jar</packaging>
 	<version>1.0-SNAPSHOT</version>
-	<name>JavaExeDemo</name>
+	<name>Boid-Sandbox</name>
 	<url>http://maven.apache.org</url>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -58,7 +58,7 @@
 						</goals>
 						<configuration>
 							<headerType>gui</headerType>
-							<outfile>target/Project.exe</outfile>
+							<outfile>target/${project.name}.exe</outfile>
 							<jar>target/${project.artifactId}-${project.version}.jar</jar>
 							<!-- if <dontWrapJar>true</dontWrapJar> change to this conf <jar>${project.artifactId}-${project.version}.jar</jar> -->
 							<dontWrapJar>false</dontWrapJar>
@@ -81,9 +81,9 @@
 								<companyName>comp</companyName>
 								<productVersion>3.0.0.0</productVersion>
 								<txtProductVersion>${project.version}</txtProductVersion>
-								<productName>Project</productName>
-								<internalName>Project</internalName>
-								<originalFilename>Project.exe</originalFilename>
+								<productName>${project.name}</productName>
+								<internalName>${project.name}</internalName>
+								<originalFilename>${project.name}.exe</originalFilename>
 							</versionInfo>
 						</configuration>
 					</execution>
