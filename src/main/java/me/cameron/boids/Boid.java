@@ -5,7 +5,7 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.util.Random;
 
-import res.Texture;
+import me.cameron.boids.res.Texture;
 
 public class Boid {
 
