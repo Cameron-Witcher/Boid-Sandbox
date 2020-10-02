@@ -3,10 +3,10 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>me.cameron</groupId>
-	<artifactId>boid-sandbox</artifactId>
+	<artifactId>BoidSandbox</artifactId>
 	<packaging>jar</packaging>
 	<version>1.0-SNAPSHOT</version>
-	<name>Boid Sandbox</name>
+	<name>JavaExeDemo</name>
 	<url>http://maven.apache.org</url>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -58,8 +58,8 @@
 						</goals>
 						<configuration>
 							<headerType>gui</headerType>
-							<outfile>target/${project.name}</outfile>
-							<jar>target/${project.name}-${project.version}.jar</jar>
+							<outfile>target/Project.exe</outfile>
+							<jar>target/${project.artifactId}-${project.version}.jar</jar>
 							<!-- if <dontWrapJar>true</dontWrapJar> change to this conf <jar>${project.artifactId}-${project.version}.jar</jar> -->
 							<dontWrapJar>false</dontWrapJar>
 							<errTitle>Error in launch4j plugin</errTitle>
@@ -81,9 +81,9 @@
 								<companyName>comp</companyName>
 								<productVersion>3.0.0.0</productVersion>
 								<txtProductVersion>${project.version}</txtProductVersion>
-								<productName>${project.name}</productName>
-								<internalName>${project.name}</internalName>
-								<originalFilename>${project.name}.exe</originalFilename>
+								<productName>Project</productName>
+								<internalName>Project</internalName>
+								<originalFilename>Project.exe</originalFilename>
 							</versionInfo>
 						</configuration>
 					</execution>
