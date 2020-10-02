@@ -2,11 +2,11 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.howtodoinjava</groupId>
-	<artifactId>JavaExeDemo</artifactId>
+	<groupId>me.cameron</groupId>
+	<artifactId>Boid Sandbox</artifactId>
 	<packaging>jar</packaging>
 	<version>1.0-SNAPSHOT</version>
-	<name>JavaExeDemo</name>
+	<name>${project.artifactId}</name>
 	<url>http://maven.apache.org</url>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -58,7 +58,7 @@
 						</goals>
 						<configuration>
 							<headerType>gui</headerType>
-							<outfile>target/Project.exe</outfile>
+							<outfile>target/${project.artifactId}</outfile>
 							<jar>target/${project.artifactId}-${project.version}.jar</jar>
 							<!-- if <dontWrapJar>true</dontWrapJar> change to this conf <jar>${project.artifactId}-${project.version}.jar</jar> -->
 							<dontWrapJar>false</dontWrapJar>
@@ -81,9 +81,9 @@
 								<companyName>comp</companyName>
 								<productVersion>3.0.0.0</productVersion>
 								<txtProductVersion>${project.version}</txtProductVersion>
-								<productName>Project</productName>
-								<internalName>Project</internalName>
-								<originalFilename>Project.exe</originalFilename>
+								<productName>${project.artifactId}</productName>
+								<internalName>${project.artifactId}</internalName>
+								<originalFilename>${project.artifactId}.exe</originalFilename>
 							</versionInfo>
 						</configuration>
 					</execution>
