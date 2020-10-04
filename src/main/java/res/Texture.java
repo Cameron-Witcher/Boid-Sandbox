@@ -1,4 +1,4 @@
-package me.cameron.boids.res;
+package res;
 
 import java.awt.Image;
 import java.io.InputStream;
