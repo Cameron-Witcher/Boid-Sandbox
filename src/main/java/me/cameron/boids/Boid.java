@@ -5,8 +5,6 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.util.Random;
 
-import res.Texture;
-
 public class Boid {
 
 	Image image;
@@ -41,7 +39,7 @@ public class Boid {
 		cx = 0;
 		cy = 0;
 
-		image = Texture.loadTexture("boid.png");
+		image = ImageUtils.getImage("images/boid.png");
 
 	}
 
