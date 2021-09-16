@@ -11,7 +11,7 @@ public class Boid {
 	double x;
 	double y;
 
-	long life = 0;
+	long life = 3;
 
 	double cx;
 	double cy;
